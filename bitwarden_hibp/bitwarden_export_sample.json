@@ -1,0 +1,56 @@
+{
+  "folders": [
+    {
+      "id": "e5fc1bf5-c234-4222-930c-a960710f0759",
+      "name": "Folder1"
+    },
+    {
+      "id": "457d31bc-a253-4917-adb6-a966011022e7",
+      "name": "Folder2"
+    }
+  ],
+  "items": [
+    {
+      "id": "7877c6d0-ed3d-41b5-b7bc-a95600df32ef",
+      "organizationId": null,
+      "folderId": "e5fc1bf5-c234-4242-930c-a960010f0759",
+      "type": 1,
+      "name": "Account1",
+      "notes": null,
+      "favorite": false,
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "http://www.google.com"
+          }
+        ],
+        "username": "Username1",
+        "password": "123456",
+        "totp": null
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "8648a566-4bf8-4986-852d-a95600ddc6f8",
+      "organizationId": null,
+      "folderId": "e5fc1bf5-c234-4232-930c-a960010f0759",
+      "type": 1,
+      "name": "Account2",
+      "notes": null,
+      "favorite": false,
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "http://www.google.com"
+          }
+        ],
+        "username": "Username2",
+        "password": "Password2",
+        "totp": null
+      },
+      "collectionIds": null
+    }
+  ]
+}
