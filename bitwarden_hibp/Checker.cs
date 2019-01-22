@@ -33,12 +33,15 @@ namespace bitwarden_hibp
                 prefixes[prefix].Add(item);
             }
 
+            var done = 0;
             var foundList = new List<(string pass, int count)>();
             foreach (var kv in prefixes)
             {
                 var prefix = kv.Key;
                 var response = await client.SearchByRange(prefix);
                 var hashCount = Parse(response).ToList();
+                done++;
+                Console.Write($"\r{done}/{prefixes.Count}".PadRight(10));
 
                 foreach (var hc in hashCount)
                 {
@@ -48,6 +51,7 @@ namespace bitwarden_hibp
                         foundList.Add((found.pass, hc.count));
                     }
                 }
+                Console.Write($"Found: {foundList.Count}".PadRight(10));
             }
             return foundList.Select(found => found.pass).ToList();
         }
