@@ -2,7 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/bitwarden_hibp/.vs
-/bitwarden_hibp/obj
-/bitwarden_hibp/bin/Debug/netcoreapp2.1
+/dotnet_app/.vs
+/dotnet_app/obj
+/dotnet_app/bin
