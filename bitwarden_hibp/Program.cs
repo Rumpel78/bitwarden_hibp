@@ -13,12 +13,16 @@ namespace bitwarden_hibp
             var filename = args.Length > 0 ? args[0] : "bitwarden_export_sample.json";
             var content = File.ReadAllText(filename);
             var data = JsonConvert.DeserializeObject<BitwardenExport>(content);
-            Console.WriteLine($"Checking {data.Items.Count} passwords");
+
+            var toCheck = data.Items
+                                .Where(o => o.Login != null && !string.IsNullOrWhiteSpace(o.Login.Password))
+                                .Select(o => o.Login.Password)
+                                .ToList();
+            Console.WriteLine($"Checking {toCheck.Count} passwords");
             Console.WriteLine();
 
-            var passwords = Checker.Check(data.Items.Select(item => item.Login.Password)).Result;
-
-            if (passwords.Count == 0)
+            var unsafePasswords = Checker.Check(toCheck).Result;
+            if (unsafePasswords.Count == 0)
             {
                 Console.WriteLine("No unsafe password found");
             }
@@ -26,12 +30,11 @@ namespace bitwarden_hibp
             {
                 Console.WriteLine("Unsafe passwords found:");
                 Console.WriteLine();
-                foreach (var pass in passwords)
+                foreach (var pass in unsafePasswords)
                 {
                     Console.WriteLine(pass);
                 }
-            }
-            Console.ReadLine();
+            }            
         }
     }
 }
