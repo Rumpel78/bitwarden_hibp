@@ -10,8 +10,23 @@ Export Bitwarden passwords and check against 'Have I be pawnd'
 * Execute `dotnet restore`
 * Execute `dotnet run <export_filename.json>` where `<export_filename.json>` is your exported file
 
-If you enter the directo
-
 Example:
 
 `dotnet run bitwarden_export_sample.json`
+
+Example output:
+
+>Checking 2 passwords  
+>  
+>2/2      Found: 2  
+>Unsafe logins found:  
+>  
+>7877c6d0-ed3d-41b5-b7bc-a95600df32ef  
+>Account1  
+>Username1  
+>123456  
+>  
+>8648a566-4bf8-4986-852d-a95600ddc6f8  
+>Account2  
+>Username2  
+>Password2  
