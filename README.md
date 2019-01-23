@@ -1,6 +1,7 @@
 # bitwarden_hibp
 
 Export Bitwarden passwords and check against [';--have i been pwned?](https://haveibeenpwned.com/)
+_This is a very naive implementation with no error checking etc._
 
 ## Usage:
 
